@@ -104,7 +104,7 @@ create or replace view revenue (supplier_no, total_revenue) as
 create or replace view sales_revenue as
 select extract('day', l_orderdate) janday,
         sum(l_extendedprice * (1 - l_discount)) revenue
- from sales.public.product, sales.public.lineitem
+ from DEMO_DBNAME.public.product, DEMO_DBNAME.public.lineitem
  where p_productkey = l_productkey
    and p_name = 'Blue Sky'
    and l_orderdate >= '01/01/2014'
